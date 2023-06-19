@@ -58,6 +58,7 @@ public class SecurityConfig {
 									"/emp/delete").hasAnyRole("ADMIN");//emp권한
 			
 			request.requestMatchers("/static/images/**").permitAll(); //배경이미지
+			request.requestMatchers("/static/css/**").permitAll(); //배경이미지
 			
 			
 			

@@ -20,65 +20,7 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<style type="text/css">
-#user{
-	color: white;
-	margin: auto;
-}
-#log{ 
- 	position:absolute; 
-	right: 0px; 
- 	padding-right: 60px; 
- }
-img{
-	width: 100%;
-	height: 650px;
-}
-#list{
-	margin-left: 100px;
-}
-#inf{
-	margin-right: 30px;
-}
-#logo{
-	border: 2px solid gray;
-	border-radius: 10px;
-	width: 60px;
-	text-align: center;
-	margin-left: 30px;
-}
-#bar{
-	position: fixed;
-	top:0%;
-	z-index: 1;
-}
-#imgtext{
-	top:250px;
-	color:black;
-}
-.t1{
-	font-size: 25pt;
-	font-weight: bolder;
-	font-family: 'Arsenal', sans-serif;
-}
-.t2{
-	font-size: 60pt;
-	font-weight: bolder;
-	font-family: 'Archivo Black', sans-serif;
-}
-@media screen and (max-width: 768px) {
-  .t1, .t2 {
-    font-size: 30pt;
-  }
-} 
-#icon{
-	color: #e2e2e2;
-}
-#demo{
-	margin-bottom: 30px;
-}
-</style>
-
+<link rel="stylesheet" href="/static/css/home.css" type="text/css">
 <title>home.jsp</title>
 </head>
 <body>
@@ -91,17 +33,17 @@ img{
     <div class="collapse navbar-collapse justify-content-between" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
         <li class="nav-item dropdown" id="list">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="hov">
             Company
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark" >
+          <ul class="dropdown-menu dropdown-menu-dark">
             <li><a class="dropdown-item" href="dept/list">Department List</a></li>
             <li><a class="dropdown-item" href="emp/list">Employee List</a></li>
             <li><a class="dropdown-item" href="salgrade/list">Salary Grade</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="hov">
             World
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
@@ -111,7 +53,7 @@ img{
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="hov">
             Notice
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
@@ -121,8 +63,8 @@ img{
         </ul>
         <ul class="navbar-nav" id="inf">
         <sec:authorize access="isAnonymous()">
-                <li><a href="/user/login" class="nav-link">Log In</a></li>
-                <li><a href="/user/join" class="nav-link">Sign Up</a></li>
+                <li><a href="/user/login" class="nav-link" id="hov">Log In</a></li>
+                <li><a href="/user/join" class="nav-link" id="hov">Sign Up</a></li>
                 </sec:authorize>
                 <sec:authorize access="isAuthenticated()">
                 <li id="user"><sec:authentication property="name"/>님 환영합니다</li>
@@ -153,13 +95,6 @@ img{
 	 		<p class="t1" style="color: white">Welcome To My Page</p>
 	 		<p class="t2" style="color: white">IT'S NICE TO MEET YOU</p>
 		</div>
-    </div>
-    <div class="carousel-item">
-      <img src="/static/images/home3.jpg" alt="" class="d-block w-100">
-      	<div class="carousel-caption" id="imgtext">
-	 		<p class="t1">Welcome To My Page</p>
-	 		<p class="t2">IT'S NICE TO MEET YOU</p>
-		</div>
     </div> 
     <div class="carousel-item">
       <img src="/static/images/home4.jpg" alt="" class="d-block w-100">
@@ -175,33 +110,39 @@ img{
   <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
+</div>
+<div class="hr">
+ <div class="divider div-transparent div-dot"></div>
 </div>	
-<div class="container" id="bottom">
+<div class="container" id="bottom" style="width: 80%">
 	<div class="row">
 		<div class="col-md-4">
-			<h4>Department</h4>
+			<h4 style="font-family:'Arsenal', sans-serif">Department</h4>
 			<p>This area is created to check department information, click to move to dept/list.</p>
-			<p><a class="btn btn-secondary" href="dept/list">Learn More</a></p>
+			<p><a class="btn btn-outline-dark" href="dept/list">Learn More</a></p>
 		</div>
 		<div class="col-md-4">
-			<h4>Employee</h4>
+			<h4 style="font-family:'Arsenal', sans-serif">Employee</h4>
 			<p>This area is created to check employee information, click to move to emp/list.</p>
-			<p><a class="btn btn-secondary" href="emp/list">Learn More</a></p>
+			<p><a class="btn btn-outline-dark" href="emp/list">Learn More</a></p>
 		</div>
 		<div class="col-md-4">
-			<h4>Salary Grade</h4>
+			<h4 style="font-family:'Arsenal', sans-serif">Salary Grade</h4>
 			<p>This area is created to check salary grade information, click to move to salgrade/list.</p>
-			<p><a class="btn btn-secondary" href="salgrade/list">Learn More</a></p>
+			<p><a class="btn btn-outline-dark" href="salgrade/list">Learn More</a></p>
 		</div>
 	</div>
 </div>
-<div class="container-fluid text-center bg-dark text-white p-3 mt-5" >
+<div class="hr">
+ <div class="divider div-transparent div-dot"></div>
+</div>	
+<div class="container-fluid text-center bg-dark text-white p-4 mt-5" >
 	<div class="container-fluid" style="width: 80%">
 	<div class="row justify-content-between">
-	<div class="col-md-6">
-		<p>© Copyright 2023 Son's | Images:Unsplash</p>
+	<div class="col-md-12">
+		<p>© Copyright 2023 Son's  | Designed by SangSooSon | Images:Unsplash</p>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-12">
 		<a href="https://www.instagram.com/" id="icon"><i class="fa-brands fa-instagram fa-2x"></i></a>
 		<a href="https://twitter.com/" id="icon"><i class="fa-brands fa-twitter fa-2x"></i></a>
 		<a href="https://ko-kr.facebook.com/" id="icon"><i class="fa-brands fa-facebook fa-2x"></i></a>
