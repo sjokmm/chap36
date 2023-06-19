@@ -141,21 +141,28 @@ img{
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/static/images/home.jpg" alt="Los Angeles" class="d-block w-100">
+      <img src="/static/images/home.jpg" alt="" class="d-block w-100">
 	 	<div class="carousel-caption" id="imgtext">
 	 		<p class="t1">Welcome To My Page</p>
 	 		<p class="t2">IT'S NICE TO MEET YOU</p>
 		</div>
     </div>
     <div class="carousel-item">
-      <img src="/static/images/home2.jpg" alt="Chicago" class="d-block w-100">
+      <img src="/static/images/home2.jpg" alt="" class="d-block w-100">
       	<div class="carousel-caption" id="imgtext">
 	 		<p class="t1" style="color: white">Welcome To My Page</p>
 	 		<p class="t2" style="color: white">IT'S NICE TO MEET YOU</p>
 		</div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/images/home3.jpg" alt="" class="d-block w-100">
+      	<div class="carousel-caption" id="imgtext">
+	 		<p class="t1">Welcome To My Page</p>
+	 		<p class="t2">IT'S NICE TO MEET YOU</p>
+		</div>
     </div> 
     <div class="carousel-item">
-      <img src="/static/images/home4.jpg" alt="New York" class="d-block w-100">
+      <img src="/static/images/home4.jpg" alt="" class="d-block w-100">
       	<div class="carousel-caption" id="imgtext">
 	 		<p class="t1" style="color: white">Welcome To My Page</p>
 	 		<p class="t2" style="color: white">IT'S NICE TO MEET YOU</p>
@@ -191,10 +198,10 @@ img{
 <div class="container-fluid text-center bg-dark text-white p-3 mt-5" >
 	<div class="container-fluid" style="width: 80%">
 	<div class="row justify-content-between">
-	<div class="col-md-2">
-		<p>© Copyright 2023 Son's</p>
+	<div class="col-md-6">
+		<p>© Copyright 2023 Son's | Images:Unsplash</p>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-6">
 		<a href="https://www.instagram.com/" id="icon"><i class="fa-brands fa-instagram fa-2x"></i></a>
 		<a href="https://twitter.com/" id="icon"><i class="fa-brands fa-twitter fa-2x"></i></a>
 		<a href="https://ko-kr.facebook.com/" id="icon"><i class="fa-brands fa-facebook fa-2x"></i></a>

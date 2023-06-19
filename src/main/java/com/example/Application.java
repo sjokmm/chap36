@@ -11,6 +11,10 @@ public class Application {
 		System.out.println("#################");
 		System.out.println("SpringBoot Start!");
 		System.out.println("#################");
+		
+		System.out.println("#################");
+		System.out.println("SpringBoot Start2!");
+		System.out.println("#################");
 	}
 
 }
