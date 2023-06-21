@@ -14,36 +14,57 @@
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
-
-<title>page.jsp</title>
+<link rel="stylesheet" href="/static/css/list.css" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Arsenal:ital,wght@1,700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0531e5b215.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/static/css/page.css" type="text/css">
+<title>Son's : 부서 목록</title>
 </head>
 <body>
-<h1>City Page <span>pageNum = ${paging.pageNum}</span></h1>
-<hr>
-<a href="/">Home</a>
-<hr>
+<!-- Header -->
+<div id="wrap">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid" id="bar" >
+  <div class="container-fluid" style="width: 80%">
+    <a class="navbar-brand" href="/" id="logo">Son's</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav">
+        	<li>
+        		<a href="/"><i class="fa-solid fa-house fa-1x"></i></a>
+        	</li>
+        </ul>
+        <ul class="navbar-nav" id="inf">
+        <sec:authorize access="isAnonymous()">
+                <li><a href="/user/login" class="nav-link" id="hov">Log In</a></li>
+                <li><a href="/user/join" class="nav-link" id="hov">Sign Up</a></li>
+                </sec:authorize>
+                <sec:authorize access="isAuthenticated()">
+                <li id="user"><sec:authentication property="name"/>님 환영합니다</li>
+                <li><a href="/user/logout" class="nav-link">Log Out</a></li>
+                <li><a href="#" class="nav-link">Personal Information</a></li>
+       </sec:authorize>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Body -->
+
+<div class="container-fluid p-5 bg-secondary text-white text-center" id="title">
+  <h4>| Son's Company |</h4>
+  <h1>City List</h1>
+</div>
+
 <section class="container">
-	<ul class="list-group list-group-horizontal">
-		<li><a href="/city/page/${paging.navigateFirstPage-1}/${paging.pageSize}" class="list-group-item">Previous</a></li>
-	<c:forEach var="n" items="${paging.navigatepageNums}">
-		<c:choose>
-			<c:when test="${n eq paging.pageNum}">
-				<li class="list-group-item active"><a href="/city/page/${n}/${paging.pageSize}" class="text-danger">${n}</a></li>
-			</c:when>
-			<c:when test="${n ne paging.pageNum}">
-				<li class="list-group-item       "><a href="/city/page/${n}/${paging.pageSize}">${n}</a></li>
-			</c:when>
-		</c:choose>
-	</c:forEach>
-		<li><a href="/city/page/${paging.navigateLastPage+1}/${paging.pageSize}" class="list-group-item">Next</a></li>
-	</ul>
-	<hr>
-	
-	<hr>
-	
-	<table class="table table-striped table-bordered table-hover">
+	<table class="table table-striped table-bordered table-hover text-center">
 		<thead>
-			<tr>
+			<tr class="table-dark">
 				<th>id</th>
 				<th>name</th>
 				<th>countryCode</th>
@@ -55,7 +76,7 @@
 		<c:forEach var="e" items="${list}">
 			<tr>
 				<td>${e.id}</td>
-				<td><a href="/city/detail/${e.id}?pageNum=${paging.pageNum}&pageSize=${paging.pageSize}">${e.name}</a></td>
+				<td><a href="/city/detail/${e.id}?pageNum=${paging.pageNum}&pageSize=${paging.pageSize}" id="detail">${e.name}</a></td>
 				<td>${e.countryCode}</td>
 				<td>${e.district}</td>
 				<td align="right">
@@ -65,12 +86,35 @@
 		</c:forEach>
 		</tbody>
 	</table>
-	<hr>
-	<div>
-	<pre>
-	${json}
-	</pre>
-	</div>
 </section>
+	<ul class="pagination pagination-lg pagination text-dark justify-content-center" id="pnum" style="margin-top: 50px;">
+		<li class="page-item"><a class="page-link" href="/city/page/${paging.navigateFirstPage-1}/${paging.pageSize}">Previous</a></li>
+		<c:forEach var="n" items="${paging.navigatepageNums}">
+			<c:choose>
+				<c:when test="${n eq paging.pageNum}">
+					<li class="page-item active"><a class="page-link" href="/city/page/${n}/${paging.pageSize}" class="text-white">${n}</a></li>
+				</c:when>
+				<c:when test="${n ne paging.pageNum}">
+					<li class="page-item       "><a class="page-link" href="/city/page/${n}/${paging.pageSize}">${n}</a></li>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<li class="page-item"><a class="page-link" href="/city/page/${paging.navigateLastPage+1}/${paging.pageSize}">Next</a></li>
+	</ul>
+</div>
+<div class="container-fluid text-center bg-dark text-white p-4 mt-5" id="footer">
+	<div class="container-fluid" style="width: 80%">
+	<div class="row justify-content-between">
+	<div class="col-md-12">
+		<p>© Copyright 2023 Son's  | Designed by SangSuSon | Images:Unsplash</p>
+	</div>
+	<div class="col-md-12">
+		<a href="https://www.instagram.com/" id="icon"><i class="fa-brands fa-instagram fa-2x"></i></a>
+		<a href="https://twitter.com/" id="icon"><i class="fa-brands fa-twitter fa-2x"></i></a>
+		<a href="https://ko-kr.facebook.com/" id="icon"><i class="fa-brands fa-facebook fa-2x"></i></a>
+	</div>
+	</div>	
+	</div>
+</div>
 </body>
 </html>

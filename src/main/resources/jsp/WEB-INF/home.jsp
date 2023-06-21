@@ -21,9 +21,10 @@
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/static/css/home.css" type="text/css">
-<title>home.jsp</title>
+<title>Son's</title>
 </head>
 <body>
+<!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid" id="bar" >
   <div class="container-fluid" style="width: 80%">
     <a class="navbar-brand" href="/" id="logo">Son's</a>
@@ -54,10 +55,10 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="hov">
-            Notice
+            Information
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Notices</a></li>
+            <li><a class="dropdown-item" href="#">Gallery</a></li>
             <li><a class="dropdown-item" href="#">Bulletin Board</a></li>
           </ul>
         </ul>
@@ -75,6 +76,7 @@
     </div>
   </div>
 </nav>
+<!-- Body -->
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
@@ -111,9 +113,12 @@
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
+
 <div class="hr">
  <div class="divider div-transparent div-dot"></div>
 </div>	
+
+
 <div class="container" id="bottom" style="width: 80%">
 	<div class="row">
 		<div class="col-md-4">
@@ -133,14 +138,41 @@
 		</div>
 	</div>
 </div>
+
 <div class="hr">
  <div class="divider div-transparent div-dot"></div>
 </div>	
+
+<div class="container text-center pb-3">
+	<div class="row">
+		<div class="col-lg-4" id="frame">
+			<a href="country/page/1/10" class="banner_img">
+			  <img src="/static/images/home_count.jpg" alt="" id="img">
+			  <p class="hover_text">Country</p>
+			</a>
+		</div>
+		
+		<div class="col-lg-4" id="frame">
+			<a href="city/page/1/10" class="banner_img">
+			  <img src="/static/images/home_city.jpg" alt="" id="img">
+			  <p class="hover_text">City</p>
+			</a>
+		</div>
+		
+		<div class="col-lg-4" id="frame">
+			<a href="language/page/1/10" class="banner_img">
+			  <img src="/static/images/home_lang.jpg" alt="" id="img">
+			  <p class="hover_text">Language</p>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- Footer -->
 <div class="container-fluid text-center bg-dark text-white p-4 mt-5" >
 	<div class="container-fluid" style="width: 80%">
 	<div class="row justify-content-between">
 	<div class="col-md-12">
-		<p>© Copyright 2023 Son's  | Designed by SangSooSon | Images:Unsplash</p>
+		<p>© Copyright 2023 Son's  | Designed by SangSuSon | Images:Unsplash</p>
 	</div>
 	<div class="col-md-12">
 		<a href="https://www.instagram.com/" id="icon"><i class="fa-brands fa-instagram fa-2x"></i></a>

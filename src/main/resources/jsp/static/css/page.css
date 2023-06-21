@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.page-link {
+  color: #1e010b; 
+  background-color: #e2e2e2;
+  border-color: #7a7672;
+}
+
+.page-item.active .page-link {
+ z-index: 1;
+ color: #ccc;
+ font-weight:bold;
+ background-color:#7a7672;
+  border-color: #7a7672;
+  color:white;
+}
+
+.page-link:focus, .page-link:hover {
+  color: #ccc;
+  background-color: #222; 
+  border-color: #7a7672;
+}

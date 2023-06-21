@@ -45,6 +45,8 @@ public class SecurityConfig {
 			request.requestMatchers("/city/list").permitAll();
 			request.requestMatchers("/country/list").permitAll();
 			request.requestMatchers("/language/page/**").permitAll();
+			request.requestMatchers("/country/page/**").permitAll();
+			request.requestMatchers("/city/page/**").permitAll();
 			
 			
 			request.requestMatchers("/user/join").permitAll(); //회원가입
